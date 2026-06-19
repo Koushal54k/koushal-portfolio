@@ -337,7 +337,7 @@ body:has(a:hover) .cursor-ring, body:has(button:hover) .cursor-ring{
   animation:modal-in 0.4s cubic-bezier(0.25,0.46,0.45,0.94);
 }
 @keyframes modal-in{from{opacity:0;transform:scale(0.92);}to{opacity:1;transform:scale(1);}}
-.video-modal video{width:100%;display:block;background:#000;}
+.video-modal video{width:100%;display:block;background:#000;max-height:80vh;}
 .modal-close{
   position:absolute;top:14px;right:14px;
   width:36px;height:36px;border-radius:50%;
@@ -842,8 +842,9 @@ footer span{color:var(--cyan);}
       <div class="modal-title">// koushal-intro.mp4</div>
       <button class="modal-close" onclick="closeModal()"><i class="fa-solid fa-xmark"></i></button>
     </div>
-    <video id="modal-video" controls playsinline preload="none">
-      <source src="C:\Users\patil\Desktop\project\potfileo\koushal-portfolio\intro.mp4" type="video/mp4">
+    <video id="modal-video" controls playsinline preload="metadata">
+      <source src="intro.mp4" type="video/mp4">
+      Your browser does not support the video tag.
     </video>
   </div>
 </div>
@@ -1296,7 +1297,7 @@ footer span{color:var(--cyan);}
   <h2 class="section-title">Watch My Intro</h2>
   <div class="video-section-inner">
     <div class="video-preview-card" onclick="openModal()">
-      <video muted loop autoplay playsinline preload="metadata" style="pointer-events:none;">
+      <video id="preview-video" muted loop autoplay playsinline preload="auto">
         <source src="intro.mp4" type="video/mp4">
       </video>
       <div class="video-overlay">
